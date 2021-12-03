@@ -179,6 +179,7 @@
   }
   .side_list ul {
     border:1px solid #ccc;
+    text-align:center;
   }
   .side_list li {
     list-style:none;

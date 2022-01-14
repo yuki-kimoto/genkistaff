@@ -1,0 +1,20 @@
+# build 時に index.html に blog 最新記事を反映したい
+## giblog build の流れを追う
+run_commnad: ~/perl5/perlbrew/perls/perl-5.32.1/lib/site_perl/5.32.1/Giblog.pm
+  # Command is implemented in command
+  my $command_class = "Giblog::Command::$command_name";
+  build: /Users/r.murakami/perl5/perlbrew/perls/perl-5.32.1/lib/site_perl/5.32.1/Giblog/Command/build.pm
+  /Users/r.murakami/perl5/perlbrew/perls/perl-5.32.1/lib/site_perl/5.32.1/Giblog//Command/new.pm
+  $command->run(@argv);
+  Command/new.pm -> run -> $api->create_website_from_proto($website_name, $module_name);
+  /Users/r.murakami/perl5/perlbrew/perls/perl-5.32.1/lib/site_perl/5.32.1/Giblog/API.pm -> create_website_from_proto
+
+api.pm: 
+  proto_dir: /Users/r.murakami/perl5/perlbrew/perls/perl-5.32.1/lib/site_perl/5.32.1/Giblog/Command/new_website/proto
+
+--
+# build index.html
+giblog build -> lib/Giblog/Command/build.pm build_html
+
+0926 upload
+cp templates/blog/20210911.html templates/index.html

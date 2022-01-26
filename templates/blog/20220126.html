@@ -1,0 +1,46 @@
+<h2>Giblogにデプロイ機能が追加されました!</h2>
+
+こんにちは、Perlクラブの村上です！
+
+そして明けましておめでとうございます &#x1f389; 今年もPerlクラブをよろしくお願いします &#x1f647;
+
+
+今回は、<a href="https://metacpan.org/pod/Giblog">Giblog</a>のバージョンアップの報告です！
+
+まもなくGiblogはバージョン3.0 がリリースされます！
+
+デプロイが機能が追加されるとのことで、早速試させていただきました！
+
+
+現時点ではまだリリースされていませんが、<a href="https://metacpan.org/release/KIMOTO/Giblog-2.01_02">こちらの開発用バージョン(2.01_02)</a>からご確認いただけます！
+
+
+以下、使い方です！
+
+<h3>
+0. お手元のGiblogのバージョンをアップデートする 
+  (3.0がリリース後に、正式に利用可能になります!)
+  <pre> cpanm update Giblog </pre>
+
+1. deploy.pl というファイルをプロジェクトルートに用意し、デプロイ処理を記述します
+
+2. 以下、手順よりコミット＆プッシュを行う
+  <pre>
+  giblog build
+  
+  giblog save -m "コミットメッセージ"
+  
+  giblog publish origin master
+  </pre>
+
+3. deploy コマンドを実行して、deploy.pl に記述した処理を実行します
+  <pre> giblog deploy </pre>
+
+※ また上記 2、３の手順を、以下のコマンドで一気に実行することも可能です
+  <pre> giblog all -m "コミットメッセージ" origin master </pre>
+</h3>
+
+デプロイ処理も機能に加わり、より簡単にページを公開できるようになりました〜！！
+
+みなさんもよければ3.0の機能について確認してみてください &#x1f4aa;&#x1f4aa;&#x1f4aa;
+
